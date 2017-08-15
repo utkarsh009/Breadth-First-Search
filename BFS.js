@@ -9,21 +9,20 @@ var Graph = {
 			this.adjlist[src].push(dest)
 		},
 	BFS: function(root) {
-			var self = this
-			self.queue.push(root)
-			self.visited[root] = 1
-			while (self.queue.length > 0) {
-				var vertex = self.queue.shift()
+			this.queue.push(root)
+			this.visited[root] = 1
+			while (this.queue.length > 0) {
+				var vertex = this.queue.shift()
 				console.log(vertex)
-				for(var i=0;i<self.adjlist[vertex].length;i++) {
-					var adjvertex = self.adjlist[vertex][i]
-					if (!(self.visited[adjvertex])) {
-						self.visited[adjvertex] = 1
-						self.queue.push(adjvertex)
+				for(var i=0;i<this.adjlist[vertex].length;i++) {
+					var adjvertex = this.adjlist[vertex][i]
+					if (!(this.visited[adjvertex])) {
+						this.visited[adjvertex] = 1
+						this.queue.push(adjvertex)
 					}
 				}
 			}
-		},
+		}
 	}
 
 Graph.addEdge(0,1)
